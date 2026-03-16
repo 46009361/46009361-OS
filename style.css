@@ -31,14 +31,14 @@ header {
   touch-action: none;
   border: 5px solid light-dark(lightblue,darkblue);
   border-radius: 5px;
+  overflow: auto;
+  resize: both;
 }
 
 .toolbar {
   background-color: light-dark(lightblue,darkblue);
   color: light-dark(white,black);
   cursor: move;
-  overflow: auto;
-  resize: both;
 }
 
 .frame {
