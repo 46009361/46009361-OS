@@ -4,7 +4,6 @@
 */
 :root {
   color-scheme: light dark;
-  --padding: 8px; /* default padding */
 }
 
 body {
@@ -12,13 +11,13 @@ body {
   margin: 0;
 }
 
-body > * {
+body>* {
   padding: 8px;
 }
 
 header {
-  background-color: light-dark(dimgrey, lightgrey);
-  color: light-dark(white, black);
+  background-color: light-dark(dimgrey,whitesmoke);
+  color: light-dark(white,black);
   display: flex;
   justify-content: flex-end;
 }
@@ -30,11 +29,17 @@ header {
 
 .window {
   touch-action: none;
-  border: 5px solid light-dark(lightblue, darkblue);
+  border: 5px solid light-dark(lightblue,darkblue);
   border-radius: 5px;
 }
 
 .toolbar {
-  background-color: light-dark(lightblue, darkblue);
-  color: light-dark(white, black);
+  background-color: light-dark(lightblue,darkblue);
+  color: light-dark(white,black);
+  cursor: move;
+}
+
+.frame {
+  overflow: auto;
+  resize: both;
 }

@@ -18,10 +18,10 @@ function updateClock() {
     });
 
     // 2. Calculate ms until the next minute starts
-    const msUntilNextMinute = now.now() % 6e4;
+    const msUntilNextMinute = now.getTime() % 6e4;
 
     // 3. Schedule the next update (with a tiny 10ms buffer to ensure the minute has actually rolled over)
-    setTimeout(updateClock, msUntilNextMinute + 10);
+    timerId = setTimeout(updateClock, msUntilNextMinute + 10);
 }
 
 // Initial call to start the clock
