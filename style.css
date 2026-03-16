@@ -37,9 +37,11 @@ header {
   background-color: light-dark(lightblue,darkblue);
   color: light-dark(white,black);
   cursor: move;
+  overflow: auto;
+  resize: both;
 }
 
 .frame {
-  overflow: auto;
-  resize: both;
+  width: 100%;
+  height: 100%;
 }
