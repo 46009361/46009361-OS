@@ -1,12 +1,31 @@
-function date() {
-    const osTime = document.querySelector("#os-time");
-    const time = new Date();
-    osTime.dateTime = time.toISOString();
-    osTime.innerText = time.toLocaleTimeString();
+let timerId;
+
+document.addEventListener("visibilitychange", () => {
+    if (document.visibilityState === "hidden") {
+        clearTimeout(timerId); // Stop when hidden
+    } else {
+        updateClock(); // Restart when visible
+    }
+});
+
+function updateClock() {
+    const now = new Date();
+    
+    // 1. Update your UI here
+    document.querySelector("#os-time").textContent = now.toLocaleTimeString([], { 
+        hour: '2-digit', 
+        minute: '2-digit' 
+    });
+
+    // 2. Calculate ms until the next minute starts
+    const msUntilNextMinute = now.now() % 6e4;
+
+    // 3. Schedule the next update (with a tiny 10ms buffer to ensure the minute has actually rolled over)
+    setTimeout(updateClock, msUntilNextMinute + 10);
 }
 
-date();
-setInterval(date, 1e3);
+// Initial call to start the clock
+updateClock();
 
 document.querySelector("#start-btn").addEventListener("click", function() {
     document.querySelector("#wlc-scrn").style.display = "none";
