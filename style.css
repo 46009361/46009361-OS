@@ -30,4 +30,11 @@ header {
 
 .window {
   touch-action: none;
+  border: 5px solid light-dark(lightblue, darkblue);
+  border-radius: 5px;
+}
+
+.toolbar {
+  background-color: light-dark(lightblue, darkblue);
+  color: light-dark(white, black);
 }

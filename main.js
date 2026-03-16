@@ -22,13 +22,15 @@ function load() {
 }
 
 function openWin() {
-    const dialog = document.createElement("dialog");
     const win = document.querySelector("#window").content;
-    const node = win.cloneNode(true);
-    dialog.appendChild(node);
-    document.querySelector("#main-os").appendChild(dialog);
-    dialog.show();
-    dragElement(dialog);                                                                                                                   
+    const article = win.firstElementChild.cloneNode(true);
+    // Use absolute positioning to keep dragging stable on mobile
+    article.style.position = "absolute";
+    article.style.top = "100px";
+    article.style.left = "100px";
+    article.style.transform = "none";
+    document.querySelector("#main-os").appendChild(article);
+    dragElement(article);
 }
 
 function dragElement(elmnt) {
