@@ -26,6 +26,11 @@ function updateClock() {
 
 // Initial call to start the clock
 updateClock();
+let programs;
+async function load() {
+    programs = await (await fetch("programs.json")).json();
+    templateLogic(programs);
+}
 
 document.querySelector("#start-btn").addEventListener("click", function() {
     document.querySelector("#wlc-scrn").style.display = "none";
@@ -33,16 +38,31 @@ document.querySelector("#start-btn").addEventListener("click", function() {
     load();
 });
 
-function load() {
-    const iconTemplate = document.querySelector("#icon");
-    const iconEl = iconTemplate.content.firstElementChild.cloneNode(true);
-    iconEl.addEventListener("click", openWin);
-    document.querySelector("#main-os").appendChild(iconEl);
+function templateLogic(programs) {
+    for (const [unique_name, program] of Object.entries(programs)) {
+        const iconTemplate = document.querySelector("#icon");
+        const iconEl = iconTemplate.content.firstElementChild.cloneNode(true);
+        iconEl.innerHTML = iconEl.innerHTML.replaceAll(/{{(.+?)}}/g, (match, key) => escapeHTML(program[key]));
+        iconEl.name = unique_name;
+        iconEl.addEventListener("click", openWin);
+        document.querySelector("#main-os").appendChild(iconEl);
+    }
 }
 
-function openWin() {
+function escapeHTML(str) {
+    const escaped = str.replaceAll("&", "&amp;")
+    .replaceAll("\"", "&#34;")
+    .replaceAll("'", "&#39;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;");
+    return escaped;
+}
+
+function openWin(e) {
     const win = document.querySelector("#window").content;
+    const name = e.currentTarget.name;
     const article = win.firstElementChild.cloneNode(true);
+    article.innerHTML = article.innerHTML.replaceAll(/{{(.+?)}}/g, (match, key) => escapeHTML(programs[name][key]));
     // Use absolute positioning to keep dragging stable on mobile
     article.style.position = "absolute";
     article.style.top = "100px";

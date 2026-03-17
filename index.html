@@ -20,11 +20,11 @@
                 <button id="start-btn">Start</button>
             </section>
             <section id="main-os">
-                <template id="icon"><div><img src="1f5a5.svg" width="20" height="20"><br>My Computer</div></template>
+                <template id="icon"><div class="icon"><img src="{{icon}}" width="20" height="20"><div>{{title}}</div></div></template>
                 <template id="window">
                     <article class="window">
-                        <div class="toolbar">Toolbar</div>
-                        <iframe class="frame"></iframe>
+                        <div class="toolbar">{{title}}</div>
+                        <iframe class="frame" src="{{source}}"></iframe>
                     </article>
                 </template>
             </section>
