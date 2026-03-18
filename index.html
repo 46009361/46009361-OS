@@ -20,11 +20,12 @@
                 <button id="start-btn">Start</button>
             </section>
             <section id="main-os">
-                <template id="icon"><div class="icon"><img src="{{icon}}" width="20" height="20"><div>{{title}}</div></div></template>
+                <template id="icon"><div class="icon"><img src="{{icon}}" width="{{w}}" height="{{h}}"><div>{{title}}</div></div></template>
                 <template id="window">
                     <article class="window">
                         <div class="toolbar">{{title}}</div>
-                        <iframe class="frame" src="{{source}}"></iframe>
+                        <!-- referrerpolicy due to https://corsproxy.io/blog/fix-youtube-error-150-153-webview/#the-root-cause-missing-referer-headers affecting .app.github.dev -->
+                        <iframe class="frame" referrerpolicy="strict-origin-when-cross-origin" src="{{source}}"></iframe>
                     </article>
                 </template>
             </section>

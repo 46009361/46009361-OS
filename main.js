@@ -51,7 +51,7 @@ function templateLogic(programs) {
 
 function escapeHTML(str) {
     const escaped = str.replaceAll("&", "&amp;")
-    .replaceAll("\"", "&#34;")
+    .replaceAll('"', "&#34;")
     .replaceAll("'", "&#39;")
     .replaceAll("<", "&lt;")
     .replaceAll(">", "&gt;");
@@ -65,8 +65,8 @@ function openWin(e) {
     article.innerHTML = article.innerHTML.replaceAll(/{{(.+?)}}/g, (match, key) => escapeHTML(programs[name][key]));
     // Use absolute positioning to keep dragging stable on mobile
     article.style.position = "absolute";
-    article.style.top = "100px";
-    article.style.left = "100px";
+    article.style.top = `${Math.floor(Math.random()*100+1)}px`;
+    article.style.left = `${Math.floor(Math.random()*100+1)}px`;
     article.style.transform = "none";
     document.querySelector("#main-os").appendChild(article);
     dragElement(article);

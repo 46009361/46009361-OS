@@ -2,6 +2,16 @@
     "my_computer": {
         "icon": "1f5a5.svg",
         "title": "My Computer",
-        "source": "https://www.youtube-nocookie.com/embed/C0DPdy98e4c"
+        "source": "https://otr11.gitlab.io",
+        "w": "20",
+        "h": "20",
+        "_comment": "Please keep the widths and heights as strings"
+    },
+    "test_video": {
+        "icon": "1f3a5-1f4fa.png",
+        "title": "Test Video",
+        "source": "https://www.youtube-nocookie.com/embed/C0DPdy98e4c",
+        "w": "40",
+        "h": "20"
     }
 }

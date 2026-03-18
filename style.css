@@ -26,18 +26,27 @@ header {
 .icon {
   user-select: none;
   cursor: pointer;
+  width: 72px;
+}
+
+.icon:hover {
+  background-color: light-dark(#fff3, #0003);
+}
+
+.icon:focus {
+  border: 1px dotted light-dark(black, white);
 }
 
 .window {
   touch-action: none;
-  border: 5px solid light-dark(lightblue, darkblue);
+  border: 5px solid light-dark(blue, lightblue);
   border-radius: 5px;
   overflow: auto;
   resize: both;
 }
 
 .toolbar {
-  background-color: light-dark(lightblue, darkblue);
+  background-color: light-dark(blue, lightblue);
   color: light-dark(white, black);
   cursor: move;
 }
@@ -45,4 +54,6 @@ header {
 .frame {
   width: 100%;
   height: 100%;
+  border: none;
+  background-color: white;
 }
