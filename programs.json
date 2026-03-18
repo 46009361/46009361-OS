@@ -17,7 +17,7 @@
     "fun_fact": {
         "icon": "1f4a1.svg",
         "title": "Fun Fact",
-        "source": "fun_fact.html",
+        "source": "./fun_fact.html",
         "w": "20",
         "h": "20"
     }
