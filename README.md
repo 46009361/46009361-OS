@@ -10,6 +10,7 @@ Features:
 * `www.youtube-nocookie.com` embed
 * Respects default browser theme
 * A fun fact on a "safety net" feature I'd add if this were a real OS!
+* Tipping, click "hosted by neocities"
 > [!NOTE]
 >
 > Due to technical limitations of query parameters in GitLab Pages, sorting files won't work.
