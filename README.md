@@ -15,4 +15,4 @@ Features:
 >
 > Due to technical limitations of query parameters in GitLab Pages, sorting files won't work.
 
-Thanks to Simon Yapp for the test video and Nelson Education for the math courses.
+Thanks to Simon Yapp for the test video and Nelson Education for the [math courses](https://gitlab.com/OTR11/otr11.gitlab.io).
